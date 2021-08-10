@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td> <input type="text" id="dauvao"></td>
+            <td>
+                <select name="" id="fromC">
+                    <option value="a">VND</option>
+                    <option value="b">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="toC">
+                    <option value="a">VND</option>
+                    <option value="b">USD</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="dosomething()">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function dosomething() {
+            let GTvao = document.getElementById("dauvao").value;
+            let Tienvao = document.getElementById('fromC').value;
+            let Tiendoi = document.getElementById('toC').value;
+            if (Tienvao == Tiendoi) {
+                alert(GTvao);
+            }
+            if (Tienvao == 'a' && Tiendoi == 'b'){
+                alert(GTvao/23000);
+            }
+            if (Tienvao == 'b' && Tiendoi == 'a'){
+                alert(GTvao*23000);
+            }
+        }
+    </script>
+</body>
+</html>
