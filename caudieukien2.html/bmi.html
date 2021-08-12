@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Height</td>
+            <td>
+                <input type="text" id="m">
+            </td>
+        </tr>
+        <tr>
+            <td>Weight</td>
+            <td>
+                <input type="text" id="kg">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="bmi()">BMI</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function  bmi(){
+            let H = document.getElementById("m").value;
+            let W = document.getElementById("kg").value;
+            let BMI = W / (H * H);
+            if (BMI < 18.5) {
+                alert ('Underweight');
+            } else {
+                if (BMI < 25.0) {
+                    alert('Nomal');
+                } else {
+                    if (BMI < 30.0) {
+                        alert('Overweight');
+                    } else {
+                        alert('Obese');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
