@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <table>
+      <tr>
+          <td>Họ và tên </td>
+          <td><input type="text"></td>
+      </tr>
+      <tr>
+          <td>Điểm kiểm tra </td>
+          <td><input type="text" name="" id="d1"></td>
+      </tr>
+      <tr>
+          <td>Điểm thi giữa kỳ </td>
+          <td><input type="text" name="" id="d2"></td>
+      </tr>
+      <tr>
+          <td>Điểm thi cuối kỳ </td>
+          <td><input type="text" id="d3"></td>
+      </tr>
+      <tr>
+          <td>Xếp loại <span id="ranger"></span></td>
+      </tr>
+      <tr>
+        <td><button onclick="tinh()"></button></td>
+      </tr>
+  </table>
+  <script>
+        function tinh() {
+      let a = parseInt(document.getElementById('d1').value);
+      let b = parseInt(document.getElementById('d2').value);
+      let c = parseInt(document.getElementById('d3').value);
+      let result = (a + b + c) / 3;
+      if (result < 5) {
+        document.getElementById('ranger').innerHTML += 'YẾU';
+      } else {
+        if (result < 6.5) {
+            document.getElementById('ranger').innerHTML += 'TRUNG BÌNH';
+        } else {
+            if (result < 8) {
+                document.getElementById('ranger').innerHTML += 'KHÁ';
+            } else {
+                document.getElementById('ranger').innerHTML += 'GIỎI';
+            }
+        }
+      }
+        }
+  </script>
+</body>
+</html>

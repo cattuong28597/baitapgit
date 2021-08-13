@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>HOA HỒNG HÀNG THÀNG</h2>
+ <table>
+     <tr>
+         <td> Họ và tên nhân viên: </td>
+         <td><input type="text"></td>
+     </tr>
+     <tr>
+         <td> Doanh số bán hàng trong tháng</td>
+         <td><input type="text" id="revenue"></td>
+     </tr>
+     <tr>
+         <td>Mức hoa hồng nhận được</td>
+         <td><input type="text" id="commission"></td>
+     </tr>
+     <tr>
+         <td><button onclick="tinh()">result</button></td>
+     </tr>
+ </table>
+<script>
+    function tinh() {
+        let i = parseInt(document.getElementById('revenue').value);
+        let r ;
+        if (i > 9000000) {
+            r = i * 0.15;
+        } else {
+            if (i > 6000000) {
+                r = i * 0.10;
+            } else {
+                r = i * 0.05;
+            }
+        }
+        document.getElementById('commission').value = r;
+    }
+</script>
+</body>
+</html>

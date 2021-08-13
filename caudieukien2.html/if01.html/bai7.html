@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <script>
+     let a = parseInt(prompt('Thời gian cuộc gọi: ')) ;
+     let b;
+     /*<5 là 1000
+     5-15 là 2000
+     15-30 là 3000
+     30-45 là 4000
+     45-60 là 5000
+     >60 là 6000 */
+     if (a < 5) {
+        b = a * 1000;
+     } else {
+         if (a < 15) {
+            b = 5 * 1000 + (a - 5) * 2000;
+         } else {
+             if (a < 30) {
+                 b = 5 * 1000 + 10 * 2000 + (a - 15) * 3000;
+             } else {
+                 if (a < 45) {
+                     b = 5 * 1000 + 10 * 2000 + 15 * 3000 + (a - 30) * 4000;
+                 } else {
+                     if (a < 60) {
+                         b = 5 * 1000 + 10 * 2000 + 15 * 3000 + 15 * 4000 + (a - 45) * 5000;
+                     } else {
+                         b = 5 * 1000 + 10 * 2000 + 15 * 3000 + 15 * 4000 + 15 * 5000 + (a - 60) * 6000;
+                     }
+                 }
+             }
+         }
+     }
+     alert(b);
+ </script>
+</body>
+</html>
