@@ -7,13 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="num"></p>
  <script>
-     let text = "";
-     for (i = 0; i < 5; i++) {
-         text += "The number is " + i + "<br>";
+     let num = parseInt(prompt('Nhập số: '));
+     let total = 0;
+     while (num != -1) {
+         num = parseInt(prompt('Nhập số: '));
+         alert(num);
+         total = total + num;
      }
-     document.getElementById('num').innerHTML = text;
+     alert(total);
  </script>
 </body>
 </html>
