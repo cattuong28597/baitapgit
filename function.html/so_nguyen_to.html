@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Số cần kiểm tra</p>
+    <input type="text" id="num">
+    <input type="button" value="enter" onclick="songuyento()">
+    <script>
+        function songuyento() {
+        let N = document.getElementById("num").value;
+        let b = 0;
+        for (a = 2; a <= Math.sqrt(N); a++) {
+          if (N % a == 0) {
+            b++;
+          }
+        }
+        if (b == 0) {
+          document.write(N + " là số nguyên tố ");
+        } else {
+            document.write(N + " không phải là số nguyên tố");
+        }
+        }
+    </script>
+</body>
+</html>
