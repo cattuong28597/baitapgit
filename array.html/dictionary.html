@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Simple Dictionary</h1>
+    <table>
+        <tr>
+            <td><input type="text" id="newWord"></td>
+            <td><button id="btnchange" onclick="transWord()">Trans</button></td>
+        </tr>
+        <tr>
+            <td><span id="result"></span></td>
+        </tr>
+
+    <script>
+        let VietNam = ["cái ghế", "cái bàn", "sách", "vở", "bút" ];
+        let English = ["chair", "table", "book", "notebook", "pen"];
+   
+        function transWord() {
+            let word = document.getElementById("newWord").value;
+            for (let i = 0; i < English.length; i++) {
+                if (word == English[i]) {
+                    document.getElementById("result").innerHTML = VietNam[i];
+                    break;
+                } else {
+                    document.getElementById("result").innerHTML = 'Không tìm thấy trong từ điển';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
