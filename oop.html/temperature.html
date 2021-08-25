@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="600px" height="200px" style="border: 1px solid #e64f4f;"></canvas>
+    <script>
+        function Temperature(C) {
+            this.C = C;
+            this.F = C * 1.8 +32;
+            this.K = C + 273.15;
+        }
+        function createTemperature() {
+            let ctx = document.getElementById('mycanvas').getContext('2d');
+            let temperature = new Temperature(40);
+            ctx.font = "30px Arial";
+            ctx.fillText("Độ F là: " + temperature.F + " Độ Kevin là: " + temperature.K, 10, 50);
+        }
+        createTemperature();
+    </script>
+</body>
+</html>
