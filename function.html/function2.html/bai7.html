@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       let num1 = parseInt(prompt('Enter the firstnumber'));
+       let num2 = parseInt(prompt('Enter the secondnumber'));
+       let num = num1;
+       function change() {
+           num1 = num2;
+           num2 = num;
+           alert('the firstnumber is ' + num1 + ' the secondnumber is ' + num2);
+       }
+       change();
+   </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let symbol = prompt('Enter the symbol');
+        let count = 0;
+        let test;
+        let arr = [1, 2, 3, 4, 5, 1, 2, 1, 1];
+        function replace() {
+            for (let i = 0; i < arr.length; i++) {
+                if (symbol == arr[i]) {
+                    count += 1;
+                } 
+            }
+            return count;
+        }
+        replace();
+        console.log (count);
+        if (count == 0) {
+            alert("the array don't inclue the symbol");
+        } else {
+            alert("The array inclue " + count + " the symbol");
+        }
+    </script>
+</body>
+</html>
