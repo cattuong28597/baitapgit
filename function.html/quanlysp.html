@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="Display()">
+    <h3>Add New product</h3>
+    <table>
+      <tr>
+        <td><input type="text" id="addnew" placeholder="New Product" /></td>
+        <td><input type="button" value="Add" onclick="addproduct()" /></td>
+      </tr>
+    </table>
+    <h3>Display All Product</h3>
+    <table id="product">
+    </table>
+    <script>
+      let product = [
+        "Sony Xperia",
+        "Samsung Galaxy",
+        "Nokia 6",
+        "Xiaomi RedmiNote 4",
+        "Apple iPhone 6S",
+        "Xiaoni Mi 5s Plus",
+        "Apple iPhone 8 Plus",
+        "Fujitsu F-04E",
+        "Oppo A71",
+      ];
+      function Display() {
+        let text = "<tr>";
+        text += "<th>Product Name</th>";
+        text += "<th></th>";
+        text += "<th></th>";
+        text += "<th><span id='count'></span></th>";
+        text += " </tr>";
+        for (let i = 0; i < product.length; i++) {
+          text += "<tr>";
+          text += "<td id='newproduct" + i + "'>" + product[i] + "</td>";
+          text += "<td>";
+          text += "<button id='edit'" + i + ">Edit</button></td>";
+          text += "<td>";
+          text += "<button id='Delete'" + i + ">Delete</button></td>";
+          text += "</tr>";
+        }
+        document.getElementById("product").innerHTML = text;
+      }
+      function addproduct() {
+          let sp = document.getElementById("addnew").value;
+          product.push (sp);
+          Display();
+      }
+     
+    </script>
+  </body>
+</html>
