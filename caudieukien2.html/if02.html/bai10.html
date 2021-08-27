@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+      Số KWh dùng trong tháng: <input type="text" name="" id="KWh"> <br> <br>
+      Giá tiền điện dùng trong tháng là: <span id="money"></span> <br> <br>
+      <button onclick="calmoney()">Cal</button>
+ </div>
+ <script>
+     function calmoney() {
+         let a = document.getElementById('KWh').value;
+         let b;
+         if (a <= 100) {
+            b = a * 2000;
+            document.getElementById('money').innerHTML = b;
+         } else {
+             b = 2000000 + (a - 100) * 3000;
+             document.getElementById('money').innerHTML = b;
+         }
+     }
+ </script>
+</body>
+</html>

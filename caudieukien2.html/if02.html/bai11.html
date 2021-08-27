@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Tiền lương tính thuế trong tháng: <input type="text" name="" id="salary"> <br> <br>
+        Số thuế thu nhập trong tháng là: <span id="money"></span> <br> <br>
+        <button onclick="calmoney()">Cal</button>
+   </div> 
+   <script>
+       function calmoney() {
+        let a = document.getElementById('salary').value;
+        let b;
+        if (a < 5000000) {
+            b = a * 0.05;
+            document.getElementById('money').innerHTML = b;
+        } else {
+            if (a < 10000000) {
+                b = a * 0.1 - 250000;
+                document.getElementById('money').innerHTML = b;
+            } else {
+                if (a < 18000000) {
+                    b = a * 0.15 - 750000;
+                    document.getElementById('money').innerHTML = b ; 
+                } else {
+                    if (a < 32000000) {
+                        b = a * 0.2 - 1650000;
+                        document.getElementById('money').innerHTML = b ;
+                    } else {
+                        if (a < 52000000) {
+                            b = a * 0.25 - 3250000;
+                            document.getElementById('money').innerHTML = b ;
+                        } else {
+                            if (a < 80000000) {
+                                b = a * 0.3 - 5850000;
+                                document.getElementById('money').innerHTML = b ;
+                            } else {
+                                b = a * 0.35 - 9850000;
+                                document.getElementById('money').innerHTML = b ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       }
+   </script>
+</body>
+</html>

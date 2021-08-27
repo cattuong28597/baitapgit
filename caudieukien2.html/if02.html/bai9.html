@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div>
+     Độ dài a: <input type="text" id="A"> <br> <br>
+     Độ dài b: <input type="text" id="B"> <br> <br>
+     Độ dài c: <input type="text" id="C"> <br> <br>
+     <button onclick="check()">Check</button>
+     <span id="result"></span>
+     <script>
+         function check() {
+         let a = parseInt(document.getElementById('A').value) ;
+         let b = parseInt(document.getElementById('B').value);
+         let c = parseInt(document.getElementById('C').value);
+         let x = a + b;
+         let y = b + c;
+         let z = a + c;
+            if (a > 0 && b > 0 && c > 0) {
+                if (x > c && y > a && z > b) {
+                    document.getElementById('result').innerHTML = 'Đây là 3 cạnh một tam giác';
+                } else {
+                    document.getElementById('result').innerHTML = 'Đây không phải là 3 cạnh một tam giác';
+                }
+            } else {
+                document.getElementById('result').innerHTML = 'Đây không phải là 3 cạnh một tam giác';
+            }
+        }
+     </script>
+ </div>
+</body>
+</html>

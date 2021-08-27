@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Số tiền vay:</td>
+                <td><input type="text" name="" id="money"></td>
+            </tr>
+            <tr>
+                <td>Định kỳ:</td>
+                <td><input type="text" name="" id="month"></td>
+            </tr>
+            <tr>
+                <td>Thời gian vay:</td>
+                <td><input type="text" id="time"></td>
+            </tr>
+            <tr>
+                <td>Lãi suất</td>
+                <td><input type="text" id="interest_rate"></td>
+            </tr>
+            <tr>
+                <td>Số tiền phải trả:</td>
+                <td id="borrow"></td>
+            </tr>
+        </table>
+        <button onclick="calmoney()">Cal</button>
+   </div>
+   <script>
+       function calmoney() {
+           let m = document.getElementById('money').value;
+           let Month = document.getElementById('month').value;
+           let Time = document.getElementById('time').value;
+           let ir = document.getElementById('interest_rate').value;
+           let i = m * (1 + ir / 100);
+           let n = Time / Month;
+           let result = m * Math.pow(i, n);
+           document.getElementById('borrow').innerHTML = result;
+       }
+   </script>
+</body>
+</html>

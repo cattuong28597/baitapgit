@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Giải phương trình bậc 2</h2>
+  <div>
+      Nhập a: <input type="text" id="A"> <br><br>
+      Nhập b: <input type="text" id="B"> <br><br>
+      Nhập c: <input type="text" id="C"> <br><br>
+    <button onclick="perform()">Result</button>
+    <span id="result"></span>
+  </div>
+  <script>
+    function perform() {
+      let a = document.getElementById('A').value;
+      let b = document.getElementById('B').value;
+      let c = document.getElementById('C').value;
+      let delta = b * b - 4 * a * c;
+        console.log(a);
+          if (a == 0) {
+              document.getElementById('result').innerHTML = 'Khong phai la phuong trinh bac 2';
+          } else {
+              if (delta < 0) {
+                  document.getElementById('result').innerHTML = 'Phuong trinh vo nghiem';
+              } else {
+                  if (delta == 0) {
+                      document.getElementById('result').innerHTML = 'Phuong trinh co nghiem kep :' + (-b) / (2 * a);
+                  } else {
+                      if (delta > 0) {
+                          document.getElementById('result').innerHTML = 'Phuong trinh co hai nghiem la: ' + ((-b) + Math.sqrt(delta)) / (2 * a) + ' va ' + ((-b) - Math.sqrt(delta)) / (2 * a);
+                      }
+                  }
+              }
+          }
+      }
+  </script>
+</body>
+</html>
