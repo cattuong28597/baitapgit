@@ -7,23 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>20 numbers in the fibonacci</h2>
+    <h2>Số đầu tiên chia hết cho 5 trong dãy Fibonacci</h2>
     <p id="result"></p>
  <script>
      let a = 0;
      let b = 1;
      let c = 1;
-     for (i = 1; i < 20 ; i++) {
-        if (i == 0 || i == 1) {
-            a = 1;
-            document.getElementById('result').innerHTML += a + ', ';
-        } else {
+     for (i = 1; i < 200 ; i++) {
             a = b + c;
-            document.getElementById('result').innerHTML += a + ', ';
             b = c;
             c = a;
+            if (a % 5 == 0) {
+                document.getElementById('result').innerHTML = a; 
+                break;
+            }
         }
-     }
+     
  </script>
 </body>
 </html>
