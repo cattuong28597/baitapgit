@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <img src="pic_bulboff.gif" alt="" id="image1" style="display: initial;"> 
+   <img src="pic_bulbon.gif" alt="" id="image2" style="display: none;"> <br> <br>
+   <p>Năng lượng: <span id="timeEnergy"></span></p>
+    <button onclick="ON()">Turn On</button>
+    <button onclick="OFF()">Turn Off</button>
+    <button onclick="Recharge()">Recharge</button>
+    <button onclick="End()">EndRecharge</button>
+
+    <script>
+        class Battery {
+            constructor(energy) {
+                this.energy = energy;
+            }
+            getEnergy() {
+                return this.energy;
+            }
+            setEnergy(energy) {
+                if (energy > 100) {
+                    alert ('Nhập lại mức pin')
+                } else {
+                    this.energy = energy;
+                }
+            }
+            rechargeEnergy() {
+                this.energy++
+            }
+            decreaseEnergy() {
+                if (this.energy > 0) {
+                    this.energy--
+                }
+            }
+        };
+
+        class Flashlamp {
+            constructor(battery) {
+                this.battery = battery;
+            }
+            getBattery() {
+                return this.battery.getEnergy();
+            }
+            setBattery(battery) {
+                this.battery = battery;
+            }
+        }
+        let battery = new Battery(10);
+        let flashlamp = new Flashlamp(battery);
+        // console.log(flashlamp.getBattery())
+        document.getElementById("timeEnergy").innerHTML += flashlamp.getBattery();
+        function ON() {
+            this.powerDecrease = setInterval(() => {
+                battery.decreaseEnergy();
+                let t = flashlamp.getBattery();
+                if (t > 0) {
+                   document.getElementById("timeEnergy").innerHTML = t;
+                   document.getElementById('image1').style.display = 'none';
+                   document.getElementById('image2').style.display = 'initial';
+                } else {
+                    document.getElementById("timeEnergy").innerHTML = 0;
+                    clearInterval(this.powerDecrease);
+                    document.getElementById('image1').style.display = 'initial';
+                    document.getElementById('image2').style.display = 'none';
+                }
+            }, 1000)
+        }
+        function OFF() {
+            let t = flashlamp.getBattery();
+            document.getElementById("timeEnergy").innerHTML = t;
+            clearInterval(this.powerDecrease);
+            document.getElementById('image1').style.display = 'initial';
+            document.getElementById('image2').style.display = 'none';
+        }
+        function Recharge() {
+            this.powerIncrease = setInterval(() => {
+                battery.rechargeEnergy();
+                let t = flashlamp.getBattery();
+                if (t < 20) {
+                    document.getElementById('timeEnergy').innerHTML = t;
+                } else {
+                    clearInterval(this.powerIncrease);
+                    document.getElementById('timeEnergy').innerHTML = 20;
+                }
+            },200)
+        }
+        function End() {
+            let t = flashlamp.getBattery();
+            clearInterval(this.powerIncrease);
+            document.getElementById('timeEnergy').innerHTML = t;
+        }
+    </script>
+</body>
+</html>
